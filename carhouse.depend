@@ -55,7 +55,8 @@
 	<time.h>
 	<stdio.h>
 
-<<<<<<< HEAD
+1516372917 D
+
 1516373474 source:c:\users\christian\documents\github\carhouse\main.c
 	<stdio.h>
 	<stdlib.h>
@@ -65,7 +66,12 @@
 	"car_Christian_Schrefl.h"
 
 1516373493 c:\users\christian\documents\github\carhouse\car_christian_schrefl.h
-=======
+
 1516373690 e:\1.daten\1.htl\3.klasse\fsst\1_su\carhouse\car_christian_schrefl.h
->>>>>>> e780185c90b3e19b177b5a46b157037c19b55ea1
+
+1516373690 0185c90b3e19b177b5a46b157037c19b55ea1
+
+1516373786 source:e:\1.daten\1.htl\3.klasse\fsst\1_su\carhouse\car_christian_schrefl.c
+	"car_Christian_Schrefl.h"
+	<stdio.h>
 

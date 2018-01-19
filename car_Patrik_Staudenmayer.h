@@ -38,6 +38,6 @@ void noCrypton(char *in, char key);
 
 //Prototypes for loop functions
 void addCar (CAR *head, CAR (*readCar)(void));
-CAR* readLocalFile(void (*decryption)(char *string_to_decrypt, char key, int len));
+CAR* CARsave(void (*decryption)(char *string_to_decrypt, char key, int len));
 
 #endif // CAR_PATRIK_STAUDENMAYER_H_INCLUDED

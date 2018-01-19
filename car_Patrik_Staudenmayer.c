@@ -65,7 +65,7 @@ CAR readUser(void)
     return readC;
 }
 
-CAR* readLocalFile(void (*decryption)(char *string_to_decrypt, char key, int len))
+CAR* CARsave(void (*decryption)(char *string_to_decrypt, char key, int len))
 {
     FILE *fcar;
     int x;
@@ -153,3 +153,4 @@ CAR* readLocalFile(void (*decryption)(char *string_to_decrypt, char key, int len
 
     return head;
 }
+
