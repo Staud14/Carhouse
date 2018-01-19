@@ -1,5 +1,5 @@
 /******************************************************************************************************************************************
- * Created by Patrik Staudenmayer
+ * Created by Christian Schrefl, Lukas Zens and Patrik Staudenmayer
  *
  *  Managment program for a car seller
  *
