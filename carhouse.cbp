@@ -33,11 +33,8 @@
 		</Compiler>
 		<Unit filename="car_Christian_Schrefl.c">
 			<Option compilerVar="CC" />
-			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="car_Christian_Schrefl.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="car_Christian_Schrefl.h" />
 		<Unit filename="car_Patrik_Staudenmayer.c">
 			<Option compilerVar="CC" />
 		</Unit>
