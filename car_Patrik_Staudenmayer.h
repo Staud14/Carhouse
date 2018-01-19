@@ -5,6 +5,12 @@
 #define SECURE_KEY 'k'
 #define Im_gona_break_free  break;
 
+#define M_DataCorruption    if((che = fgetc(fcar)) == ';')          \
+                            {                                       \
+                                printf("Data is corrupted\n");      \
+                                return NULL;                        \
+                            }
+
 
 //Structures
 typedef struct sCar CAR;

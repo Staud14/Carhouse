@@ -69,7 +69,7 @@ CAR* readLocalFile(void (*decryption)(char *string_to_decrypt, char key, int len
 {
     FILE *fcar;
     int x;
-    CAR localCar, *head;
+    CAR localCar, *currentPos, *head = NULL;
     char che;
 
 
@@ -89,11 +89,7 @@ CAR* readLocalFile(void (*decryption)(char *string_to_decrypt, char key, int len
             }
 
             //Check Data for corruption
-            if((che = fgetc(fcar)) == ';')
-            {
-                printf("Data is corrupted\n");
-                return NULL;
-            }
+            M_DataCorruption                //This is a macro so no semicolon is needed
 
             //Read brand
             for(x=0; x < CAR_STRING_LENGHT; x++)
@@ -104,11 +100,7 @@ CAR* readLocalFile(void (*decryption)(char *string_to_decrypt, char key, int len
             }
 
             //Check Data for corruption
-            if((che = fgetc(fcar)) == ';')
-            {
-                printf("Data is corrupted\n");
-                return NULL;
-            }
+            M_DataCorruption                //This is a macro so no semicolon is needed
 
             //Read colour
             localCar.colour = fgetc(fcar);
@@ -116,17 +108,32 @@ CAR* readLocalFile(void (*decryption)(char *string_to_decrypt, char key, int len
                 break;
 
             //Check Data for corruption
-            if((che = fgetc(fcar)) == ';')
-            {
-                printf("Data is corrupted\n");
-                return NULL;
-            }
+            M_DataCorruption                //This is a macro so no semicolon is needed
 
             //Read price
             fscanf(fcar,"%d",&localCar.price);
+            if(localCar.price == EOF)
+                break;
+
+            //Setting next
+            localCar.next = NULL;
 
             //Decrypting Car
             Cryption(localCar.identifier, SECURE_KEY, ( ( sizeof(CAR) - sizeof(CAR *) ) / sizeof(char) ) ) ;
+
+            if(head == NULL)
+            {
+                head = malloc(sizeof(CAR));
+                *head = localCar;
+                currentPos = head;
+            }
+            else
+            {
+                currentPos->next = malloc(sizeof(CAR));
+                currentPos = currentPos->next;
+                *currentPos = localCar;
+            }
+
 
         }while(1);
 
@@ -141,8 +148,7 @@ CAR* readLocalFile(void (*decryption)(char *string_to_decrypt, char key, int len
         return NULL;
     }
 
-    //Decrypting Car
-    Cryption(localCar.identifier, SECURE_KEY, ( ( sizeof(CAR) - sizeof(CAR *) ) / sizeof(char) ) ) ;
+
 
 
     return head;
