@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="car_Patrik_Staudenmayer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="car_Patrik_Staudenmayer.h" />
 		<Unit filename="console.c">
 			<Option compilerVar="CC" />
 		</Unit>
