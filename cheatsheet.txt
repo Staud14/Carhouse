@@ -1,0 +1,4 @@
+Format for saving:
+xxxx;xxxxx;xxxx;
+
+Semicolon for dividing
