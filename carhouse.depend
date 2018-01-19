@@ -58,7 +58,11 @@
 
 1516372917 D
 
+<<<<<<< HEAD
 1516373881 source:c:\users\christian\documents\github\carhouse\main.c
+=======
+1516373474 source:c:\users\christian\documents\github\carhouse\main.c
+>>>>>>> f4076597f2c993700a065af5aa0e143e64d22e30
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -66,15 +70,25 @@
 	"car_Patrik_Staudenmayer.h"
 	"car_Christian_Schrefl.h"
 
+<<<<<<< HEAD
 1516374083 c:\users\christian\documents\github\carhouse\car_christian_schrefl.h
+=======
+1516373493 c:\users\christian\documents\github\carhouse\car_christian_schrefl.h
+>>>>>>> f4076597f2c993700a065af5aa0e143e64d22e30
 
 1516373690 e:\1.daten\1.htl\3.klasse\fsst\1_su\carhouse\car_christian_schrefl.h
 
 1516373690 0185c90b3e19b177b5a46b157037c19b55ea1
 
+<<<<<<< HEAD
 1516373571 source:c:\users\christian\documents\github\carhouse\car_patrik_staudenmayer.h
 
 1516372917 source:c:\users\christian\documents\github\carhouse\console.h
 	<windows.h>
 	<conio.h>
+=======
+1516373786 source:e:\1.daten\1.htl\3.klasse\fsst\1_su\carhouse\car_christian_schrefl.c
+	"car_Christian_Schrefl.h"
+	<stdio.h>
+>>>>>>> f4076597f2c993700a065af5aa0e143e64d22e30
 
