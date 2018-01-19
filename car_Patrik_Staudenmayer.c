@@ -4,19 +4,7 @@
 
 #include "console.h"
 #include "car_Patrik_Staudenmayer.h"
-
-
-//*****************Function by Christian Schrefl******************************************
-void Cryption(char *in, char key, int len)
-{
-    int i;
-    for(i=0;i<len;i++)
-    {
-        *in^=key;
-    }
-}
-//*****************************************************************************************
-
+#include "car_Christian_Schrefl.h"
 
 void addCar (CAR *head, CAR (*readCar)(void))
 {

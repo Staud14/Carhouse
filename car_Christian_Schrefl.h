@@ -16,4 +16,6 @@ typedef struct TimeTable
 
 void loopTimeTable(TIMETABLE *current);
 
+void Cryption(char *in, char key, int len);     /// Encrypts a generic byte length
+
 #endif // CAR_CHRISTIAN_SCHREFL_H_INCLUDED

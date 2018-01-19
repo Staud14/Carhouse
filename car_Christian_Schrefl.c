@@ -25,3 +25,12 @@ void loopTimeTable(TIMETABLE *current)
         current=current->next;
     }
 }
+
+void Cryption(char *in, char key, int len)
+{
+    int i;
+    for(i=0;i<len;i++)
+    {
+        *in^=key;
+    }
+}
