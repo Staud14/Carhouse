@@ -1,5 +1,5 @@
 /******************************************************************************************************************************************
- * Created by Patrik Staudenmayer
+ * Created by Christian Schrefl, Lukas Zens and Patrik Staudenmayer
  *
  *  Managment program for a car seller
  *
@@ -14,7 +14,9 @@
 #include "car_Patrik_Staudenmayer.h"
 #include "car_Christian_Schrefl.h"
 
+#define TEST_THINGS
 
+#ifdef TEST_THINGS
 ///TEST THINGS!!
 int fibonacci();
 int fibonacci()     //An example function which is calculatin and printing out fibonacht funktions
@@ -40,7 +42,7 @@ int fact()
     return KEEP;
 }
 ///END TEST THINGS
-
+#endif
 
 int main()
 {
