@@ -17,7 +17,6 @@
 #define TEST_THINGS
 
 #ifdef TEST_THINGS
-///TEST THINGS!!
 int fibonacci();
 int fibonacci()     //An example function which is calculatin and printing out fibonacht funktions
 {
@@ -41,13 +40,12 @@ int fact()
         return KILL;        //if the result gets to big the funktion call gets removed from the time table
     return KEEP;
 }
-///END TEST THINGS
 #endif
 
 int main()
 {
     TIMETABLE *current;
-    ///Test things!
+/*#ifdef TEST_THINGS
     ///Adding two example functions to the Time Table
     current = malloc(sizeof(TIMETABLE));
     current->next = malloc(sizeof(TIMETABLE));
@@ -55,9 +53,13 @@ int main()
     current->next->funktion=fact;
     current->funktion=fibonacci;
     ///END Test things
+#endif // TEST_THINGS
+*/
+    current = initTimeTable(fibonacci);
+//    insertInTimeTable(current, fact);
+
 
     loopTimeTable(current);
-
     return 0;
 }
 

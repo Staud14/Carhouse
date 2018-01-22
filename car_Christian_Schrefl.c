@@ -1,6 +1,23 @@
 #include "car_Christian_Schrefl.h"
 #include <stdio.h>
 
+TIMETABLE* initTimeTable(int (*funktion)())
+{
+    TIMETABLE *TT;
+    TT = malloc(sizeof(TIMETABLE));
+    TT->funktion = funktion;
+    TT->next=TT;
+    return TT;
+}
+void insertInTimeTable(TIMETABLE *current, int (*funktion)())
+{
+    TIMETABLE *tmp;
+    tmp=current->next;
+    current->next=malloc(sizeof(TIMETABLE));
+    current->next->funktion = funktion;
+    current->next->next = tmp;
+}
+
 void loopTimeTable(TIMETABLE *current)
 {
     ///Looping through the Time Table
