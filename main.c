@@ -14,33 +14,7 @@
 #include "car_Patrik_Staudenmayer.h"
 #include "car_Christian_Schrefl.h"
 
-#define TEST_THINGS
 
-#ifdef TEST_THINGS
-int fibonacci();
-int fibonacci()     //An example function which is calculatin and printing out fibonacht funktions
-{
-    static unsigned int i = 0, d = 1,c = 0;
-    int tmp = i+d;
-    printf("Fibonacci nr:%d = %d\n",c++,i);
-    i=d;
-    d=tmp;
-    if(tmp > 1000000)
-        return KILL;
-    return KEEP;
-}
-int fact();
-int fact()
-{
-    static unsigned long int i = 1, c = 1;
-    printf("Factorial of %ld = %ld\n",c,i);
-    i*=c;
-    c++;
-    if(i > 1000000)
-        return KILL;        //if the result gets to big the funktion call gets removed from the time table
-    return KEEP;
-}
-#endif
 
 int main()
 {
@@ -55,10 +29,8 @@ int main()
     ///END Test things
 #endif // TEST_THINGS
 */
-    current = initTimeTable(fibonacci);
+    current = initTimeTable(showMenu(current));
 //    insertInTimeTable(current, fact);
-
-
     loopTimeTable(current);
     return 0;
 }
