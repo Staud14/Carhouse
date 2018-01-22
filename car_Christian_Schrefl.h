@@ -16,9 +16,12 @@ typedef struct TimeTable
 
 void loopTimeTable(TIMETABLE *current);
 
-TIMETABLE* initTimeTable(int (*funktion)());
+TIMETABLE* initTimeTable(int (*funktion)(TIMETABLE *TT));
 
-void insertInTimeTable(TIMETABLE *current, int (*funktion)());
+void insertInTimeTable(TIMETABLE *current, int (*funktion)(TIMETABLE *TT));
+
+
+void showMenu(TIMETABLE *current);
 
 
 void Cryption(char *in, char key, int len);     /// Encrypts a generic byte length

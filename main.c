@@ -29,7 +29,7 @@ int main()
     ///END Test things
 #endif // TEST_THINGS
 */
-    current = initTimeTable(showMenu(current));
+    current = initTimeTable(showMenu);
 //    insertInTimeTable(current, fact);
     loopTimeTable(current);
     return 0;

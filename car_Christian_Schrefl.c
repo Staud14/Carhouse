@@ -30,7 +30,7 @@ int fact(TIMETABLE *current)
 #endif
 
 
-void showMenu(TIMETABLE *current)
+void showMenu(TIMETABLE *ins)
 {
     char c;
     printf("Select one of the following functions: \n");
@@ -48,31 +48,31 @@ void showMenu(TIMETABLE *current)
     switch(c)
     {
     case '1':     ///Add
-        insertInTimeTable(current,fibonacci);
+        insertInTimeTable(ins,fibonacci);
         break;
     case '2':     ///Edit
-        //insertInTimeTable(current,);
+        //insertInTimeTable(ins,);
         break;
     case '3':     ///Delete
-        //insertInTimeTable(current,);
+        //insertInTimeTable(ins,);
         break;
 
     case '4':     ///Save
-        //insertInTimeTable(current,);
+        //insertInTimeTable(ins,);
         break;
     case '5':     ///Load
-        //insertInTimeTable(current,);
+        //insertInTimeTable(ins,);
         break;
     default:
         printf("Fehleingabe Bitte Neu versuchen\n");
-        showMenu(current);
+        showMenu(ins);
         break;
     }
-    return KEEP;
+    return KILL;
 }
 
 
-TIMETABLE* initTimeTable(int (*funktion)())
+TIMETABLE* initTimeTable(int (*funktion)(TIMETABLE *TT))
 {
     TIMETABLE *TT;
     TT = malloc(sizeof(TIMETABLE));
@@ -80,20 +80,21 @@ TIMETABLE* initTimeTable(int (*funktion)())
     TT->next=TT;
     return TT;
 }
-void insertInTimeTable(TIMETABLE *current, int (*funktion)(TIMETABLE *TT))
+void insertInTimeTable(TIMETABLE *ins, int (*funktion)(TIMETABLE *TT))
 {
     TIMETABLE *tmp;
-    tmp=current->next;
-    current->next=malloc(sizeof(TIMETABLE));
-    current->next->funktion = funktion;
-    current->next->next = tmp;
+    tmp=ins->next;
+    ins->next=malloc(sizeof(TIMETABLE));
+    ins->next->funktion = funktion;
+    ins->next->next = tmp;
 }
 void loopTimeTable(TIMETABLE *current)
 {
+    TIMETABLE *insert=current;
     ///Looping through the Time Table
     while(current!=NULL)
     {
-        if(current->next->funktion(current)==KILL) //Deleting the function from list
+        if(current->next->funktion(insert)==KILL) //Deleting the function from list
         {
             TIMETABLE *temp;
             temp=current->next;
@@ -109,6 +110,7 @@ void loopTimeTable(TIMETABLE *current)
             }
             free(temp);
         }
+        insert=current;
         current=current->next;
     }
 }
