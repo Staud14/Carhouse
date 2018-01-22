@@ -12,7 +12,7 @@ typedef struct TimeTable
     int (*funktion)();          //Pointer to a Function returning an integer
     struct TimeTable *next;     //Next Element on the circular List
 } TIMETABLE;
-
+int count(TIMETABLE *current);
 
 void loopTimeTable(TIMETABLE *current);
 

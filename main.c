@@ -30,6 +30,7 @@ int main()
 #endif // TEST_THINGS
 */
     current = initTimeTable(showMenu);
+    insertInTimeTable(current,count);
 //    insertInTimeTable(current, fact);
     loopTimeTable(current);
     return 0;

@@ -90,7 +90,7 @@ void insertInTimeTable(TIMETABLE *ins, int (*funktion)(TIMETABLE *TT))
 }
 void loopTimeTable(TIMETABLE *current)
 {
-    TIMETABLE *insert=current;
+    TIMETABLE *insert = current;
     ///Looping through the Time Table
     while(current!=NULL)
     {
@@ -114,6 +114,14 @@ void loopTimeTable(TIMETABLE *current)
         current=current->next;
     }
 }
+
+int count(TIMETABLE *current)
+{
+    static unsigned int cnt = 0;
+    printf("LOOP: %d\n", cnt++);
+    return KEEP;
+}
+
 
 void Cryption(char *in, char key, int len)
 {
