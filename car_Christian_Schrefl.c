@@ -4,6 +4,8 @@
 #define TEST_THINGS
 
 #ifdef TEST_THINGS
+
+
 int fibonacci(TIMETABLE *current);
 int fibonacci(TIMETABLE *current)     //An example function which is calculatin and printing out fibonacht funktions
 {
@@ -23,26 +25,27 @@ int fact(TIMETABLE *current)
     printf("Factorial of %ld = %ld\n",c,i);
     i*=c;
     c++;
-    if(i > 1000000)
+    if(i > 1000000000)
         return KILL;        //if the result gets to big the funktion call gets removed from the time table
-    return KEEP;
+    return KILL;
 }
 #endif
 
 
-void showMenu(TIMETABLE *ins)
+int showMenu(TIMETABLE *ins)
 {
     char c;
     printf("Select one of the following functions: \n");
     //printf("0: \n");
     printf("1: Auto Hinzufügen(fib)\n");
-    printf("2: Auto Bearbeiten\n");
+    printf("2: Auto Bearbeiten(fact)\n");
     printf("3: Auto Löschen\n");
 
     ///Temp Bis Sync
     printf("4: Autos Speichern\n");
     printf("5: Autos Laden\n");
     ///End
+    printf("6: Stop\n");
 
     c = getch();
     switch(c)
@@ -51,6 +54,7 @@ void showMenu(TIMETABLE *ins)
         insertInTimeTable(ins,fibonacci);
         break;
     case '2':     ///Edit
+        insertInTimeTable(ins,fact);
         //insertInTimeTable(ins,);
         break;
     case '3':     ///Delete
@@ -63,12 +67,14 @@ void showMenu(TIMETABLE *ins)
     case '5':     ///Load
         //insertInTimeTable(ins,);
         break;
+    case '6':     ///Stop
+        return KILL;
     default:
         printf("Fehleingabe Bitte Neu versuchen\n");
         showMenu(ins);
         break;
     }
-    return KILL;
+    return KEEP;
 }
 
 
@@ -80,13 +86,14 @@ TIMETABLE* initTimeTable(int (*funktion)(TIMETABLE *TT))
     TT->next=TT;
     return TT;
 }
-void insertInTimeTable(TIMETABLE *ins, int (*funktion)(TIMETABLE *TT))
+TIMETABLE* insertInTimeTable(TIMETABLE *ins, int (*funktion)(TIMETABLE *TT))
 {
     TIMETABLE *tmp;
     tmp=ins->next;
     ins->next=malloc(sizeof(TIMETABLE));
     ins->next->funktion = funktion;
     ins->next->next = tmp;
+    return ins->next
 }
 void loopTimeTable(TIMETABLE *current)
 {
@@ -102,7 +109,7 @@ void loopTimeTable(TIMETABLE *current)
             {
                 current=NULL;
                 free(temp);
-                return 0;
+                return;
             }
             else
             {

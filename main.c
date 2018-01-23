@@ -29,8 +29,8 @@ int main()
     ///END Test things
 #endif // TEST_THINGS
 */
-    current = initTimeTable(showMenu);
-    insertInTimeTable(current,count);
+    current = initTimeTable(count);
+    insertInTimeTable(current,showMenu);
 //    insertInTimeTable(current, fact);
     loopTimeTable(current);
     return 0;
