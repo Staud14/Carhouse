@@ -14,14 +14,14 @@ int fibonacci(TIMETABLE *current)     //An example function which is calculatin 
     printf("Fibonacci nr:%d = %d\n",c++,i);
     i=d;
     d=tmp;
-    if(tmp > 1000000)
+    if(tmp > 1000000000)
         return KILL;
     return KILL;
 }
 int fact(TIMETABLE *current);
 int fact(TIMETABLE *current)
 {
-    static unsigned long int i = 1, c = 1;
+    static unsigned int i = 1, c = 1;
     printf("Factorial of %ld = %ld\n",c,i);
     i*=c;
     c++;
@@ -93,7 +93,7 @@ TIMETABLE* insertInTimeTable(TIMETABLE *ins, int (*funktion)(TIMETABLE *TT))
     ins->next=malloc(sizeof(TIMETABLE));
     ins->next->funktion = funktion;
     ins->next->next = tmp;
-    return ins->next
+    return ins->next;
 }
 void loopTimeTable(TIMETABLE *current)
 {
