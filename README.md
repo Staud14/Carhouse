@@ -1,2 +1,2 @@
 # carhouse
-A Project created in an FSST Lesson
+A Project created in an programming lesson
